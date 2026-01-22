@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Bridge - Crypto Casino</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="game-container">
+        <!-- Bet Input Screen -->
+        <div id="betScreen" class="screen active">
+            <div class="panel">
+                <h1 class="title">GLASS BRIDGE</h1>
+                <p class="subtitle">Enter your bet amount</p>
+                <div class="bet-input-container">
+                    <input type="number" id="betAmount" placeholder="0.00" min="0.01" step="0.01">
+                    <button id="startGame" class="btn-primary">START GAME</button>
+                </div>
+                <p class="error-message" id="betError"></p>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <!-- Game Stats -->
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-label">BET</span>
+                    <span class="stat-value" id="currentBet">0.00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">LEVEL</span>
+                    <span class="stat-value" id="currentLevel">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">MULTIPLIER</span>
+                    <span class="stat-value" id="currentMultiplier">1.2x</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">PAYOUT</span>
+                    <span class="stat-value" id="potentialPayout">0.00</span>
+                </div>
+            </div>
+
+            <!-- Status Message -->
+            <div class="status-message" id="statusMessage">Choose your path...</div>
+
+            <!-- Glass Panels -->
+            <div class="glass-bridge">
+                <div class="level-indicator">
+                    <div class="level-progress">
+                        <div class="level-bar" id="levelBar"></div>
+                    </div>
+                    <div class="level-text">Level <span id="levelDisplay">1</span> / 12</div>
+                </div>
+                
+                <div class="glass-panels" id="glassPanels">
+                    <div class="glass-panel left" id="leftPanel">
+                        <div class="glass-content">
+                            <span class="panel-label">LEFT</span>
+                        </div>
+                    </div>
+                    <div class="glass-panel right" id="rightPanel">
+                        <div class="glass-content">
+                            <span class="panel-label">RIGHT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons" id="actionButtons">
+                <button class="btn-secondary" id="cashOutBtn">CASH OUT</button>
+                <button class="btn-primary" id="continueBtn">CONTINUE</button>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="panel">
+                <h1 class="title red">GAME OVER</h1>
+                <p class="subtitle">The glass broke beneath you</p>
+                <div class="result-info">
+                    <p>You lost: <span id="lostAmount">0.00</span></p>
+                </div>
+                <button class="btn-primary" id="playAgainBtn">PLAY AGAIN</button>
+            </div>
+        </div>
+
+        <!-- Win Screen -->
+        <div id="winScreen" class="screen">
+            <div class="panel">
+                <h1 class="title green">CASHED OUT!</h1>
+                <p class="subtitle">Congratulations</p>
+                <div class="result-info">
+                    <p class="win-amount">You won: <span id="wonAmount">0.00</span></p>
+                </div>
+                <button class="btn-primary" id="playAgainWinBtn">PLAY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
+
